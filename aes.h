@@ -1,0 +1,10 @@
+void display_vector(uint8_t v[16]);
+void shift_rows(uint8_t x[4][4]);
+void mix_column(uint8_t r[4]);
+void add_round_key(uint8_t x[4][4], int32_t round, uint8_t round_key[176]);
+void key_schedule(uint8_t key[16], uint8_t round_key[176]);
+void sub_byte(uint8_t x[4][4]);
+void init(uint8_t x[4][4], uint8_t plain_text[16]);
+void aes_no_ks(uint8_t x[4][4], uint8_t round_key[176], uint8_t ciphered_text[16]);
+uint8_t get_key(uint8_t *k, uint8_t len);
+uint8_t get_pt(uint8_t *pt);

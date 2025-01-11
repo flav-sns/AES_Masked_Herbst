@@ -1,0 +1,11 @@
+void display_vector(uint8_t v[16]);
+void shift_rows(uint8_t x[4][4]);
+void mix_column(uint8_t r[4]);
+void add_round_key(uint8_t x[4][4], int32_t round, uint8_t round_key[176]);
+void init_masked_sbox(const uint8_t m, const uint8_t m_prime);
+void sub_byte(uint8_t x[4][4]);
+void change_masks(uint8_t x[4][4], const uint8_t mp, const uint8_t* mt);
+void init(uint8_t x[4][4], uint8_t plain_text[16]);
+void mask_plain_text(uint8_t x[4][4], uint8_t mpt[4]);
+void key_schedule_masked(const uint8_t *key, uint8_t *round_key, uint8_t m, const uint8_t mp, const uint8_t *mpt);
+void aes_masked(const uint8_t *key,uint8_t pt[16], uint8_t m, uint8_t m_prime, uint8_t masks[4]);
